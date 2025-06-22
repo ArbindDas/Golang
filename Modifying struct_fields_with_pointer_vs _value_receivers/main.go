@@ -6,6 +6,14 @@ type Calculator struct {
 	total int
 }
 
+type Student struct {
+	Username string
+}
+
+func (this *Student) printStudent(user string) {
+	fmt.Println(user)
+}
+
 // Method with **value receiver** - works on a copy of Calculator
 func (c Calculator) AddValue(a int) {
 	c.total += a
@@ -19,6 +27,10 @@ func (c *Calculator) AddPointer(a int) {
 }
 
 func main() {
+
+	stRes := Student{}
+
+	stRes.printStudent("Arbind Das")
 	c := Calculator{} // Create a Calculator instance
 
 	c.AddValue(10)

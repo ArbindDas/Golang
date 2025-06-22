@@ -1,32 +1,41 @@
 package main
 
-import "fmt"
+import (
+	"encoding/json"
+	"fmt"
+)
 
 type Address struct {
 	City    string
-	Country string
+	Phone   string
+	HouseNo int
 }
 
-type Employee struct {
-	Name    string
-	Age     int
-	Address // Embedded type
+type Product struct {
+	ProductId    int
+	ProductName  string
+	ProductPrice string
+	Address      Address
 }
 
 func main() {
 
-	e := Employee{
-		Name: "Arbind",
-		Age:  21,
+	ProductDetails := Product{
+
+		ProductId:    90,
+		ProductName:  "jeans",
+		ProductPrice: "1289",
+
 		Address: Address{
 			City:    "jeetpur",
-			Country: "Nepal",
+			Phone:   "+977 9821161214",
+			HouseNo: 1001,
 		},
 	}
 
-	fmt.Println("Name -> ", e.Name)
-	fmt.Println("age -> ", e.Age)
-	fmt.Println("city ->", e.City) // Access directly via embedding
-	fmt.Println("Country ->", e.Country)
+	data, _ := json.MarshalIndent(ProductDetails, "", " ")
+	fmt.Println(string(data))
+	fmt.Println(ProductDetails)
 
+	fmt.Println("jai shree ram")
 }
