@@ -9,7 +9,6 @@ type BankAccount struct {
 	TotalBalance int
 }
 
-// NewBankAccount creates a new bank account with an initial balance
 func NewBankAccount(initialBalance int) *BankAccount {
 	return &BankAccount{TotalBalance: initialBalance}
 }
@@ -41,6 +40,9 @@ func main() {
 
 	// ArbindAccount := BankAccount{1000}
 
+	// bal := 0
+
+	// ArbindAccount := NewBankAccount(&bal)
 	ArbindAccount := NewBankAccount(1000)
 	ArbindAccount.DepositeBalance(4000)
 	ArbindAccount.DepositeBalance(9000)

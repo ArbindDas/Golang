@@ -32,6 +32,12 @@ func main() {
 
 	WithDrawMoney(80, &total)
 
-	CheckBalance(&total)
+	CheckBalance(&total) //The & operator means: get the memory address of the struct.
+
+	// 	&total sends the address of total to the function.
+
+	// totalBalance *int receives that address.
+
+	// *totalBalance works with the value at that address.
 
 }

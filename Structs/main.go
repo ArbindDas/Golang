@@ -35,7 +35,7 @@ func main() {
 
 	data, _ := json.MarshalIndent(ProductDetails, "", " ")
 	fmt.Println(string(data))
-	fmt.Println(ProductDetails)
+	// fmt.Println(ProductDetails)
 
-	fmt.Println("jai shree ram")
+	// fmt.Println("jai shree ram")
 }
