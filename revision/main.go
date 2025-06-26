@@ -39,7 +39,31 @@ func printProductsData(products []int) {
 		fmt.Printf("values %d\n", values)
 	}
 }
+
+type Value struct {
+	val float64
+}
+
+func initialValue(value float64) *Value {
+	return &Value{val: value}
+}
+
+func (v *Value) getTheValue() {
+	fmt.Println("total values is", v.val)
+}
+
+func (v *Value) addValue(addVal float64) {
+	fmt.Printf("Before the addvalue the actual value is : %.2f\n", v.val)
+	v.val += addVal
+	fmt.Printf("After add the actual values is %.2f\n", v.val)
+}
 func main() {
+
+	result := initialValue(100)
+
+	result.addValue(9000)
+
+	result.getTheValue()
 	fmt.Println("jai shree ram")
 
 	addTwoNumber(10, 99)
@@ -102,5 +126,24 @@ func main() {
 	} else {
 		fmt.Printf("ALice is not present in the map")
 	}
+
+	valOne := 10
+	valTwo := 20
+
+	ptr1 := &valOne
+	ptr2 := &valTwo
+
+	temp := ptr1
+	ptr1 = ptr2
+	ptr2 = temp
+
+	fmt.Println(*ptr1)
+	fmt.Println(*ptr2)
+
+	// 	x := 10
+	// x := 20 // ❌ Error: no new variables on left side of :=
+
+	// x := 10
+	// x = 20 // Correct, reassign with =
 
 }
